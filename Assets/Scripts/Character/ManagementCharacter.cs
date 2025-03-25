@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class ManagementCharacter : MonoBehaviour
@@ -8,6 +9,7 @@ public class ManagementCharacter : MonoBehaviour
     public ManagementCharacterInputs managementCharacterInputs;
     public ManagementCharacterMove managementCharacterMove;
     public ManagementCharacterActions managementCharacterActions;
+    public ManagementCharacterCounter managementCharacterCounter;
     public CharacterInfo characterInfo = new CharacterInfo();
     void Update()
     {
@@ -15,6 +17,7 @@ public class ManagementCharacter : MonoBehaviour
         {
             HandleMove();            
             HandleActions();
+            HandleCounter();
         }
     }
     public void HandleMove()
@@ -24,6 +27,10 @@ public class ManagementCharacter : MonoBehaviour
     public void HandleActions()
     {
         managementCharacterActions.Actions();
+    }
+    public void HandleCounter()
+    {
+        managementCharacterCounter.Counter();
     }
     [Serializable] public class CharacterInfo
     {
@@ -44,8 +51,23 @@ public class ManagementCharacter : MonoBehaviour
         }
         protected bool SetGrounded()
         {
+            return GetGroundHits().Count > 0;
+        }
+        public Dictionary<string, GameObject> GetGroundHits()
+        {
             RaycastHit[] hits = Physics.BoxCastAll(characterObject.transform.position + offset, size / 2, Vector3.down, Quaternion.identity, 0, layerMask);
-            return hits.Length > 0;
+
+            Dictionary<string, GameObject> objects = new Dictionary<string, GameObject>(hits.Length);
+
+            foreach (var hit in hits)
+            {
+                string layerName = LayerMask.LayerToName(hit.collider.gameObject.layer);
+                if (!objects.ContainsKey(layerName))
+                {
+                    objects[layerName] = hit.collider.gameObject;
+                }
+            }
+            return objects;
         }
     }
     void OnDrawGizmos()
@@ -63,4 +85,5 @@ public class ManagementCharacter : MonoBehaviour
         Speed = 1,
         JumpForce = 2,
     }
+
 }
