@@ -21,7 +21,7 @@ public class ManagementCharacterCounter : MonoBehaviour
     public ManagementCharacter managementCharacter;
     public void Counter()
     {        
-        if (managementCharacter.characterInfo.GetGroundHits().Count > 0 && managementCharacter.characterInfo.GetGroundHits().TryGetValue("SafeSone", out GameObject objectHited) || 
+        if (managementCharacter.characterInfo.GetGroundHits().Count > 0 && managementCharacter.characterInfo.GetGroundHits().TryGetValue("SafeZone", out GameObject objectHited) || 
             managementCharacter.characterInfo.rb.linearVelocity.x != 0 || managementCharacter.characterInfo.rb.linearVelocity.z != 0)
         {
             add = true;
