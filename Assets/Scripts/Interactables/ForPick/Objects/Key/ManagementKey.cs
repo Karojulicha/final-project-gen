@@ -35,6 +35,10 @@ public class ManagementKey : MonoBehaviour, ManagementInteractableObject.ICharac
     {
         None = 0,
         General = 1,
-        Special = 2
+        Special = 2,
+        Part1 = 3,
+        Part2 = 4,
+        Part3 = 5,
+        Part4 = 6,
     }
 }
