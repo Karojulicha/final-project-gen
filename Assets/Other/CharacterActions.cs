@@ -135,6 +135,15 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0af2b16-164f-437b-a52f-0f6286581f79"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -291,6 +300,28 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
                     ""action"": ""DropObject"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""52d72d16-7e9b-4dcc-b6f5-1794bc4d22e5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ed9729d-8fd1-4005-bb6f-43e5e550a1c0"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -304,6 +335,7 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
         m_CharacterInputs_Interact = m_CharacterInputs.FindAction("Interact", throwIfNotFound: true);
         m_CharacterInputs_UseObject = m_CharacterInputs.FindAction("UseObject", throwIfNotFound: true);
         m_CharacterInputs_DropObject = m_CharacterInputs.FindAction("DropObject", throwIfNotFound: true);
+        m_CharacterInputs_Pause = m_CharacterInputs.FindAction("Pause", throwIfNotFound: true);
     }
 
     ~@CharacterActions()
@@ -389,6 +421,7 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterInputs_Interact;
     private readonly InputAction m_CharacterInputs_UseObject;
     private readonly InputAction m_CharacterInputs_DropObject;
+    private readonly InputAction m_CharacterInputs_Pause;
     /// <summary>
     /// Provides access to input actions defined in input action map "CharacterInputs".
     /// </summary>
@@ -420,6 +453,10 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "CharacterInputs/DropObject".
         /// </summary>
         public InputAction @DropObject => m_Wrapper.m_CharacterInputs_DropObject;
+        /// <summary>
+        /// Provides access to the underlying input action "CharacterInputs/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_CharacterInputs_Pause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -461,6 +498,9 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
             @DropObject.started += instance.OnDropObject;
             @DropObject.performed += instance.OnDropObject;
             @DropObject.canceled += instance.OnDropObject;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         /// <summary>
@@ -487,6 +527,9 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
             @DropObject.started -= instance.OnDropObject;
             @DropObject.performed -= instance.OnDropObject;
             @DropObject.canceled -= instance.OnDropObject;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         /// <summary>
@@ -562,5 +605,12 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDropObject(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
     }
 }

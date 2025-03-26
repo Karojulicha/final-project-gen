@@ -31,6 +31,12 @@ public class ManagementKey : MonoBehaviour, ManagementInteractableObject.ICharac
         rb.constraints = RigidbodyConstraints.None;
     }
     public void UseObjectInteract(ManagementCharacter managementCharacter){}
+
+    public bool CanUseObject()
+    {
+        return false;
+    }
+
     public enum TypeKey
     {
         None = 0,

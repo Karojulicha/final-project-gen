@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public class ManagementCharacterActions : MonoBehaviour
@@ -29,7 +29,7 @@ public class ManagementCharacterActions : MonoBehaviour
         {
             if (managementCharacter.managementCharacterInputs.characterActionsInfo.interact.triggered)
             {
-                managementCharacter.characterInfo.currentObjectInteract.Interact(managementCharacter);
+                managementCharacter.characterInfo._currentObjectInteract.Interact(managementCharacter);
             }
         }
         if (managementCharacter.characterInfo.currentObjectInHand)
