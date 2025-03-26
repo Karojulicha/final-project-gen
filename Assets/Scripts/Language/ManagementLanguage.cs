@@ -9,12 +9,12 @@ public class ManagementLanguage : MonoBehaviour
     private TMP_Text dialogText;
     public int id = 0;
     public ManagementData.TypeLanguage currentLanguage = ManagementData.TypeLanguage.English;
-
-    void Start()
+    void OnEnable()
     {
         dialogText = GetComponent<TMP_Text>();
         ValidateChangeText();
     }
+
     public void ValidateChangeText()
     {
         if (dialogText == null) dialogText = GetComponent<TMP_Text>();

@@ -212,5 +212,10 @@ public class ManagementData : MonoBehaviour
     {
         English = 0,
         Español = 1,
+        Português = 2,
+        Français = 3,
+        Deutsch = 4,
+        Русский = 5,
+        Italiano = 6,
     }
 }
