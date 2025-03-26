@@ -71,7 +71,7 @@ public class ManagementData : MonoBehaviour
         SetStartingDataSound(dataInfo);
         SetStartingPlayerData(dataInfo);
         SetStartingResolution(dataInfo);
-        saveData.gameInfo = new GameInfo();
+        saveData = dataInfo;
         SaveGameData();
     }
 
