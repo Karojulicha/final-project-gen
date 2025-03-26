@@ -16,4 +16,9 @@ public class TestInteraction : MonoBehaviour, ManagementInteractableObject.IChar
     {
         canRotate = !canRotate;
     }
+
+    public bool CanUseObject()
+    {
+        return false;
+    }
 }
