@@ -17,6 +17,18 @@ public class ManagementCharacterCounter : MonoBehaviour
             }
         }
     }
+    void Start()
+    {
+        CounterChanged += GameOver;
+    }
+    public void GameOver(float amount)
+    {
+        if (amount <= 0 && managementCharacter.characterInfo.isActive)
+        {
+            managementCharacter.characterInfo.isActive = false;
+            GameManager.Instance.ChangeSceneSelector(GameManager.TypeScene.GameOver);
+        }
+    }
     public bool add = false;
     public ManagementCharacter managementCharacter;
     public void Counter()
