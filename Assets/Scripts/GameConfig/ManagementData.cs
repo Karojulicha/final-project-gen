@@ -53,10 +53,11 @@ public class ManagementData : MonoBehaviour
     }
     public void LoadData()
     {
+        GameManager.Instance.SetInitialDevice();
         CheckFileExistance(DataPath());
         ReadDataFromJson();
         LoadCSV();
-        SetResolutionData();
+        if (GameManager.Instance.currentDevice == GameManager.TypeDevice.PC) SetResolutionData();
         SetAudioMixerData();
     }
     [NaughtyAttributes.Button]

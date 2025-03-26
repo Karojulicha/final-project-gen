@@ -39,8 +39,34 @@ public class ManagementCharacter : MonoBehaviour
         public SerializedDictionary<TypeStatistic, int> statistics;
         public Rigidbody rb;
         public Transform hand;
-        public ManagementInteractableObject currentObjectInteract;
-        public ManagementInteractableObject currentObjectInHand;
+        public ManagementInteractableObject _currentObjectInteract;
+        public event Action<ManagementInteractableObject> OnCurrentObjectInteractChange;
+        public ManagementInteractableObject currentObjectInteract
+        {
+            get => _currentObjectInteract;
+            set
+            {
+                if (_currentObjectInteract != value)
+                {
+                    _currentObjectInteract = value;
+                    OnCurrentObjectInteractChange?.Invoke(_currentObjectInteract);
+                }
+            }
+        }
+        public ManagementInteractableObject _currentObjectInHand;
+        public event Action<ManagementInteractableObject> OnCurrentObjectInHandChange;
+        public ManagementInteractableObject currentObjectInHand
+        {
+            get => _currentObjectInHand;
+            set
+            {
+                if (_currentObjectInHand != value)
+                {
+                    _currentObjectInHand = value;
+                    OnCurrentObjectInHandChange?.Invoke(_currentObjectInHand);
+                }
+            }
+        }
         public Vector3 offset;
         public Vector3 size;
         public LayerMask layerMask;

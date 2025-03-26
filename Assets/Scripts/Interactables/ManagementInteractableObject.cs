@@ -25,10 +25,19 @@ public class ManagementInteractableObject : MonoBehaviour
             characterAction.Drop(managementCharacter);
         }
     }
+    public bool CanUseObject()
+    {
+        if (TryGetComponent<ICharacterAction>(out ICharacterAction characterAction))
+        {
+            return characterAction.CanUseObject();
+        }
+        return false;
+    }
     public interface ICharacterAction
     {
         public void Interact(ManagementCharacter managementCharacter);
         public void Drop(ManagementCharacter managementCharacter);
         public void UseObjectInteract(ManagementCharacter managementCharacter);
+        public bool CanUseObject();
     }
 }

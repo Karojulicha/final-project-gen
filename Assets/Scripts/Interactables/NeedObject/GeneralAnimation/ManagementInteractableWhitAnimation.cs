@@ -64,6 +64,12 @@ public class ManagementInteractableWhitAnimation : MonoBehaviour, ManagementInte
     {
         throw new System.NotImplementedException();
     }
+
+    public bool CanUseObject()
+    {
+        return false;
+    }
+
     [Serializable] public class PartsInfo
     {
         public Transform partPos;
