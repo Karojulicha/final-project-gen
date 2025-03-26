@@ -6,21 +6,28 @@ using UnityEngine;
 public class ManagementInteractableWhitAnimation : MonoBehaviour, ManagementInteractableObject.ICharacterAction
 {
     public Animator animator;
+    public bool isOpen = false;
     public bool needKey = false;
     public bool needParts = false;
     public SerializedDictionary<ManagementKey.TypeKey, PartsInfo> parts = new SerializedDictionary<ManagementKey.TypeKey, PartsInfo>();
     public ManagementKey.TypeKey typeKeyNeeded = ManagementKey.TypeKey.General;
     public void Interact(ManagementCharacter managementCharacter)
     {
-        if (!needKey && !needParts)
+        if (isOpen)
         {
             bool toggleState = !animator.GetBool("isActive");
             animator.SetBool("isActive", toggleState);
+        }
+        else if (!needKey && !needParts)
+        {
+            isOpen = true;
+            animator.SetBool("isActive", true);
         }
         else if (needKey && managementCharacter.characterInfo.currentObjectInHand && managementCharacter.characterInfo.currentObjectInHand.TryGetComponent<ManagementKey>(out ManagementKey currentKey))
         {
             if (currentKey.typeKey == typeKeyNeeded)
             {
+                isOpen = true;
                 animator.SetBool("isActive", true);
                 Destroy(managementCharacter.characterInfo.currentObjectInHand.gameObject);
                 managementCharacter.characterInfo.currentObjectInHand = null;
@@ -54,6 +61,7 @@ public class ManagementInteractableWhitAnimation : MonoBehaviour, ManagementInte
                 }
                 if (canOpen)
                 {
+                    isOpen = true;
                     animator.SetBool("isActive", true);
                 }
             }
