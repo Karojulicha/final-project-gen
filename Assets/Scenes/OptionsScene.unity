@@ -1148,8 +1148,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1ee1baf9cd37f7e46a3c3f85fa82b122, type: 2}
+  m_sharedMaterial: {fileID: 8258461218328206567, guid: 1ee1baf9cd37f7e46a3c3f85fa82b122, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1403,8 +1403,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Language
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1ee1baf9cd37f7e46a3c3f85fa82b122, type: 2}
+  m_sharedMaterial: {fileID: 8258461218328206567, guid: 1ee1baf9cd37f7e46a3c3f85fa82b122, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3561,8 +3561,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Home
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1ee1baf9cd37f7e46a3c3f85fa82b122, type: 2}
+  m_sharedMaterial: {fileID: 8258461218328206567, guid: 1ee1baf9cd37f7e46a3c3f85fa82b122, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3856,8 +3856,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Options
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1ee1baf9cd37f7e46a3c3f85fa82b122, type: 2}
+  m_sharedMaterial: {fileID: 8258461218328206567, guid: 1ee1baf9cd37f7e46a3c3f85fa82b122, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4262,7 +4262,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 997338062}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.84444445
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
