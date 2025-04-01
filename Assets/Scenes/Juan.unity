@@ -509,7 +509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &239916032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,6 +847,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 9d54f0bc64ad0e94aa03ce53bdf4367b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c3ee1c11fe57ada4abd19e48184ef76a, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d54f0bc64ad0e94aa03ce53bdf4367b, type: 3}
       propertyPath: m_Name
       value: GeneralKey
@@ -1318,6 +1322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 441488326}
+  isOpen: 0
   needKey: 0
   needParts: 0
   parts:
@@ -2436,6 +2441,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 9d54f0bc64ad0e94aa03ce53bdf4367b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c3ee1c11fe57ada4abd19e48184ef76a, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d54f0bc64ad0e94aa03ce53bdf4367b, type: 3}
       propertyPath: m_Name
       value: GeneralKey (3)
@@ -3272,6 +3281,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 9d54f0bc64ad0e94aa03ce53bdf4367b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c3ee1c11fe57ada4abd19e48184ef76a, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d54f0bc64ad0e94aa03ce53bdf4367b, type: 3}
       propertyPath: m_Name
       value: GeneralKey (1)
@@ -4099,6 +4112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1579062562}
+  isOpen: 0
   needKey: 1
   needParts: 0
   parts:
@@ -4620,6 +4634,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 9d54f0bc64ad0e94aa03ce53bdf4367b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c3ee1c11fe57ada4abd19e48184ef76a, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d54f0bc64ad0e94aa03ce53bdf4367b, type: 3}
       propertyPath: m_Name
       value: GeneralKey (2)
@@ -5212,6 +5230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2001448988}
+  isOpen: 0
   needKey: 0
   needParts: 1
   parts:
