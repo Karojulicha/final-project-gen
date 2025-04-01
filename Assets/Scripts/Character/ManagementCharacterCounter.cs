@@ -77,7 +77,6 @@ public class ManagementCharacterCounter : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             counter = 0;
-            print("die");
         }
     }
 }
