@@ -13,6 +13,7 @@ public class ManagementOptions : MonoBehaviour
     public GameObject muteCheck;
     public GameObject fullScreenCheck;
     public GameManagerHelper gameManagerHelper;
+    public GameObject buttonResolution;
 
     void OnEnable()
     {
@@ -24,6 +25,7 @@ public class ManagementOptions : MonoBehaviour
         {
             InitializeResolutionDropdown();
         }
+        buttonResolution.SetActive(GameManager.Instance.currentDevice == GameManager.TypeDevice.PC);
         InitializeSliders();
         muteCheck.SetActive(ManagementData.Instance.saveData.configurationsInfo.soundConfiguration.isMute);
         fullScreenCheck.SetActive(ManagementData.Instance.saveData.configurationsInfo.resolutionConfiguration.isFullScreen);

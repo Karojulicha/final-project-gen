@@ -58,7 +58,7 @@ public class ManagementData : MonoBehaviour
         ReadDataFromJson();
         LoadCSV();
         if (GameManager.Instance.currentDevice == GameManager.TypeDevice.PC) SetResolutionData();
-        SetAudioMixerData();
+        Invoke("SetAudioMixerData", 0.1f);
     }
     [NaughtyAttributes.Button]
     public void SaveGameData()
@@ -102,9 +102,6 @@ public class ManagementData : MonoBehaviour
     }
     public void SetAudioMixerData()
     {
-
-        audioMixer = Resources.Load<AudioMixer>("AudioMixer");
-
         float decibelsMaster = 20 * Mathf.Log10(saveData.configurationsInfo.soundConfiguration.MASTERValue / 100);
         float decibelsBGM = 20 * Mathf.Log10(saveData.configurationsInfo.soundConfiguration.BGMalue / 100);
         float decibelsSFX = 20 * Mathf.Log10(saveData.configurationsInfo.soundConfiguration.SFXalue / 100);
@@ -124,6 +121,7 @@ public class ManagementData : MonoBehaviour
         audioMixer.SetFloat(ManagementOptions.TypeSound.BGM.ToString(), decibelsBGM);
         audioMixer.SetFloat(ManagementOptions.TypeSound.SFX.ToString(), decibelsSFX);
         audioMixer.SetFloat(ManagementOptions.TypeSound.Master.ToString(), saveData.configurationsInfo.soundConfiguration.isMute ? -80 : decibelsMaster);
+        SaveGameData();
     }
     public void SetResolutionData()
     {
@@ -213,5 +211,10 @@ public class ManagementData : MonoBehaviour
     {
         English = 0,
         Español = 1,
+        Português = 2,
+        Français = 3,
+        Deutsch = 4,
+        Русский = 5,
+        Italiano = 6,
     }
 }

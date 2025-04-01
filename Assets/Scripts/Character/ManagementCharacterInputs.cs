@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class ManagementCharacterInputs : MonoBehaviour
 {
@@ -29,11 +30,22 @@ public class ManagementCharacterInputs : MonoBehaviour
         characterActionsInfo.interact = characterActions.CharacterInputs.Interact;
         characterActionsInfo.useObject = characterActions.CharacterInputs.UseObject;
         characterActionsInfo.dropObject = characterActions.CharacterInputs.DropObject;
+        characterActionsInfo.pause = characterActions.CharacterInputs.Pause;
+        characterActionsInfo.pause.performed += OnPauseInput;
     }
-    private void OnMovementInput(InputAction.CallbackContext context)
+    void OnMovementInput(InputAction.CallbackContext context)
     {
         characterActionsInfo.movement = context.ReadValue<Vector2>();
     }
+
+    void OnPauseInput(InputAction.CallbackContext context)
+    {
+        if (!SceneManager.GetSceneByName("OptionsScene").isLoaded)
+        {
+            GameManager.Instance.ChangeSceneSelector(GameManager.TypeScene.OptionsScene);
+        }
+    }
+
     [Serializable] public class CharacterActionsInfo
     {
         public Vector2 movement = new Vector2();
@@ -42,5 +54,6 @@ public class ManagementCharacterInputs : MonoBehaviour
         public InputAction interact = new InputAction();
         public InputAction useObject = new InputAction();
         internal InputAction dropObject = new InputAction();
+        internal InputAction pause = new InputAction();
     }
 }

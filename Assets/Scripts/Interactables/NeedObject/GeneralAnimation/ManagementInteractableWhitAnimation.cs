@@ -6,22 +6,64 @@ using UnityEngine;
 public class ManagementInteractableWhitAnimation : MonoBehaviour, ManagementInteractableObject.ICharacterAction
 {
     public Animator animator;
+    public bool startActive = false;
+    public bool isOpen = false;
     public bool needKey = false;
     public bool needParts = false;
+
+    public AudioClip[] openSoundClip;
+    public AudioClip[] closeSoundClip;
+
+    GameManagerHelper gameManagerHelper;
+
     public SerializedDictionary<ManagementKey.TypeKey, PartsInfo> parts = new SerializedDictionary<ManagementKey.TypeKey, PartsInfo>();
     public ManagementKey.TypeKey typeKeyNeeded = ManagementKey.TypeKey.General;
+
+    void Start()
+    {
+        animator.SetBool("isActive", startActive);
+        gameManagerHelper = FindAnyObjectByType<GameManagerHelper>();
+    }
     public void Interact(ManagementCharacter managementCharacter)
     {
-        if (!needKey && !needParts)
+        if (isOpen)
         {
             bool toggleState = !animator.GetBool("isActive");
             animator.SetBool("isActive", toggleState);
+            if(toggleState)
+            {
+                foreach(var clip in openSoundClip)
+                {
+                    gameManagerHelper.PlayASound(clip, 1);
+                }
+            }else 
+            {
+                foreach (var clip in closeSoundClip)
+                {
+                    gameManagerHelper.PlayASound(clip, 1);
+                }
+            }
+            
+        }
+        else if (!needKey && !needParts)
+        {
+            isOpen = true;
+            animator.SetBool("isActive", true);
+            foreach (var clip in openSoundClip)
+            {
+                gameManagerHelper.PlayASound(clip, 1);
+            }
         }
         else if (needKey && managementCharacter.characterInfo.currentObjectInHand && managementCharacter.characterInfo.currentObjectInHand.TryGetComponent<ManagementKey>(out ManagementKey currentKey))
         {
             if (currentKey.typeKey == typeKeyNeeded)
             {
+                isOpen = true;
                 animator.SetBool("isActive", true);
+                foreach (var clip in openSoundClip)
+                {
+                    gameManagerHelper.PlayASound(clip, 1);
+                }
                 Destroy(managementCharacter.characterInfo.currentObjectInHand.gameObject);
                 managementCharacter.characterInfo.currentObjectInHand = null;
             }
@@ -54,12 +96,17 @@ public class ManagementInteractableWhitAnimation : MonoBehaviour, ManagementInte
                 }
                 if (canOpen)
                 {
+                    isOpen = true;
                     animator.SetBool("isActive", true);
+                    foreach (var clip in openSoundClip)
+                    {
+                        gameManagerHelper.PlayASound(clip, 1);
+                    }
                 }
             }
         }
     }
-    public void Drop(ManagementCharacter managementCharacter){}
+    public void Drop(ManagementCharacter managementCharacter) { }
     public void UseObjectInteract(ManagementCharacter managementCharacter)
     {
         throw new System.NotImplementedException();
@@ -70,9 +117,12 @@ public class ManagementInteractableWhitAnimation : MonoBehaviour, ManagementInte
         return false;
     }
 
-    [Serializable] public class PartsInfo
+    [Serializable]
+    public class PartsInfo
     {
         public Transform partPos;
         public bool isUse = false;
     }
+
+
 }
