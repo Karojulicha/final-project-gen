@@ -10,6 +10,10 @@ public class ManagementCharacter : MonoBehaviour
     public ManagementCharacterActions managementCharacterActions;
     public ManagementCharacterCounter managementCharacterCounter;
     public CharacterInfo characterInfo = new CharacterInfo();
+    void Start()
+    {
+        Invoke("ActiveCharacter", 1);
+    }
     void Update()
     {
         if (characterInfo.isActive)
@@ -18,6 +22,10 @@ public class ManagementCharacter : MonoBehaviour
             HandleActions();
             HandleCounter();
         }
+    }
+    void ActiveCharacter()
+    {
+        characterInfo.isActive = true;
     }
     public void HandleMove()
     {
@@ -34,7 +42,7 @@ public class ManagementCharacter : MonoBehaviour
     [Serializable] public class CharacterInfo
     {
         public GameObject characterObject;
-        public bool isActive = false;
+        [NonSerialized] public bool isActive = false;
         public bool isGrounded => SetGrounded();
         public SerializedDictionary<TypeStatistic, int> statistics;
         public Rigidbody rb;
