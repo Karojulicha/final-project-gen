@@ -7,6 +7,7 @@ public class ManagementChets : MonoBehaviour, ManagementInteractableObject.IChar
     public ManagementInteractableObject chest;
     public bool isOpen = false;
     public ManagementKey.TypeKey typeKeyNeeded;
+    public AudioClip audioChest;
     public void Interact(ManagementCharacter managementCharacter)
     {
         if (!isOpen)
@@ -20,6 +21,7 @@ public class ManagementChets : MonoBehaviour, ManagementInteractableObject.IChar
                     Destroy(managementKey.gameObject);
                     objectInChest.canInteract = true;
                     chest.canInteract = false;
+                    GameManager.Instance.PlayASound(audioChest);
                 }
             }
         }
