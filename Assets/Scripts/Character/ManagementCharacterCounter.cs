@@ -72,4 +72,12 @@ public class ManagementCharacterCounter : MonoBehaviour
         counter += add ? Time.deltaTime : -Time.deltaTime;
         counter = Math.Clamp(counter, 0, 1);
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            counter = 0;
+            print("die");
+        }
+    }
 }
