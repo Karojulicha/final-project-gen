@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3382310}
   - component: {fileID: 2377360}
   - component: {fileID: 9512762}
-  m_Layer: 0
+  - component: {fileID: 4676438303693189123}
+  m_Layer: 7
   m_Name: SD_Env_Floor_Stone_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,3 +110,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &4676438303693189123
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157892}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.000002, y: 0, z: 5}
+  m_Center: {x: 2.500001, y: 0, z: -2.4999962}
