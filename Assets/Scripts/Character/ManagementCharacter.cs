@@ -84,7 +84,7 @@ public class ManagementCharacter : MonoBehaviour
         }
         protected bool SetGrounded()
         {
-            return GetGroundHits().Count > 0;
+            return GetGroundHits().TryGetValue("Map", out GameObject floor);
         }
         public Dictionary<string, GameObject> GetGroundHits()
         {
