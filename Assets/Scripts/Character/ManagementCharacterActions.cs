@@ -12,11 +12,16 @@ public class ManagementCharacterActions : MonoBehaviour
         RaycastHit[] hits = Physics.BoxCastAll(transform.position + offset, size / 2, Vector3.up, Quaternion.identity, 0, layerMask);
         if (hits.Length > 0)
         {
-            if (hits[0].collider.gameObject.GetComponent<ManagementInteractableObject>().canInteract)
+            bool canInteract = false;
+            foreach (var objects in hits)
             {
-                managementCharacter.characterInfo.currentObjectInteract = hits[0].collider.gameObject.GetComponent<ManagementInteractableObject>();
+                if (objects.collider.gameObject.GetComponent<ManagementInteractableObject>().canInteract)
+                {
+                    canInteract = true;
+                    managementCharacter.characterInfo.currentObjectInteract = objects.collider.gameObject.GetComponent<ManagementInteractableObject>();
+                }
             }
-            else
+            if (!canInteract)
             {
                 managementCharacter.characterInfo.currentObjectInteract = null;
             }
