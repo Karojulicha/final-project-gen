@@ -1,41 +1,35 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
-public class PuzzleManager : MonoBehaviour
+public class PuzzleHandler : MonoBehaviour
 {
     public GameObject puzzlePanel; // Panel del puzzle
     public TMP_InputField puzzleInput; // Campo de texto para la respuesta
-    public GameObject keyObject; // Objeto llave
-    private string correctAnswer = "pasado";
+    public Button checkButton; // Botón de comprobar respuesta
+    
+    private string correctAnswer = "pasado"; // Respuesta correcta
 
-    void Update()
+    void Start()
     {
-        // Detectar clic derecho sobre el objeto llave
-        if (Input.GetMouseButtonDown(1)) // 1 = Clic derecho
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider.gameObject == keyObject)
-                {
-                    OpenPuzzlePanel();
-                }
-            }
-        }
+        puzzlePanel.SetActive(false); // Asegurarse de que el panel empieza oculto
+        checkButton.onClick.AddListener(CheckAnswer); // Asignar la función al botón
     }
 
-    public void OpenPuzzlePanel()
+    public void OpenPuzzle()
     {
-        puzzlePanel.SetActive(true);
+        puzzlePanel.SetActive(true); // Mostrar el puzzle
     }
 
     public void CheckAnswer()
     {
         if (puzzleInput.text.ToLower() == correctAnswer)
         {
-            puzzlePanel.SetActive(false);
+            puzzlePanel.SetActive(false); // Cerrar el panel solo si la respuesta es correcta
+        }
+        else
+        {
+            Debug.Log("Respuesta incorrecta. Inténtalo de nuevo."); // Mensaje en la consola
         }
     }
 }

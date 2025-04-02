@@ -19,7 +19,11 @@ public class ManagementKey : MonoBehaviour, ManagementInteractableObject.ICharac
             cll.enabled = false;
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+             // 🧩 Llamar a PuzzleHandler para abrir el puzzle
+        FindObjectOfType<PuzzleHandler>().OpenPuzzle();
         }
+
     }
     public void Drop(ManagementCharacter managementCharacter)
     {
