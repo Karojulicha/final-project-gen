@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    Coroutine fadeIn;
+    Coroutine fadeOut;
     void Awake()
     {
         if (Instance == null)
@@ -45,19 +47,31 @@ public class GameManager : MonoBehaviour
             case TypeScene.GameOver:
                 OpenCloseScene.SetBool("Out", true);
                 OpenCloseScene.Play("Out");
-                StartCoroutine(FadeOut());
+                if (fadeOut != null)
+                {
+                    StopCoroutine(fadeOut);
+                }
+                fadeOut = StartCoroutine(FadeOut());
                 StartCoroutine(ChangeScene(TypeScene.HomeScene));
                 break;
             default:
                 OpenCloseScene.SetBool("Out", true);
                 OpenCloseScene.Play("Out");
-                StartCoroutine(FadeOut());
+                if (fadeOut != null)
+                {
+                    StopCoroutine(fadeOut);
+                }
+                fadeOut = StartCoroutine(FadeOut());
                 StartCoroutine(ChangeScene(typeScene));
                 break;
         }
     }
     public IEnumerator FadeIn()
     {
+        if (fadeOut != null)
+        {
+            StopCoroutine(FadeOut());
+        }
         float decibelsMaster = 20 * Mathf.Log10(ManagementData.Instance.saveData.configurationsInfo.soundConfiguration.MASTERValue / 100);
         float currentVolumen = 0;
         float volume = 0;
@@ -90,10 +104,18 @@ public class GameManager : MonoBehaviour
             Application.Quit();
         }
         OpenCloseScene.SetBool("Out", false);
+        if (fadeOut != null)
+        {
+            StopCoroutine(fadeOut);
+        }
         StartCoroutine(FadeIn());
     }
     public IEnumerator FadeOut()
     {
+        if (fadeIn != null)
+        {
+            StopCoroutine(FadeIn());
+        }
         float decibelsMaster = 20 * Mathf.Log10(ManagementData.Instance.saveData.configurationsInfo.soundConfiguration.MASTERValue / 100);
         while (decibelsMaster > -80)
         {
@@ -194,9 +216,9 @@ public class GameManager : MonoBehaviour
         GameScene = 2,
         Exit = 3,
         GameOver = 4,
-        Win = 5
+        WinScene = 5
     }
-        public enum TypeDevice
+    public enum TypeDevice
     {
         None,
         PC,

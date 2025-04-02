@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 4617251916996237608}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -567,6 +567,15 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+    nextLine:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: c607bd82-07aa-4a7d-a624-5665fcf1b3c9
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
 --- !u!114 &2838237150615445149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,6 +609,7 @@ MonoBehaviour:
     layerMask:
       serializedVersion: 2
       m_Bits: 384
+  canPlay: 0
 --- !u!114 &2841920159322391789
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,13 +10,14 @@ public class ManagementCharacter : MonoBehaviour
     public ManagementCharacterActions managementCharacterActions;
     public ManagementCharacterCounter managementCharacterCounter;
     public CharacterInfo characterInfo = new CharacterInfo();
+    public bool canPlay = false;
     void Start()
     {
         Invoke("ActiveCharacter", 1);
     }
     void Update()
     {
-        if (characterInfo.isActive)
+        if (characterInfo.isActive && canPlay)
         {
             HandleMove();            
             HandleActions();

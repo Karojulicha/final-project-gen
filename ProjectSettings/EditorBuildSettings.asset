@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/OptionsScene.unity
     guid: 03f73a1ee8d248e479bd47686c99012b
   - enabled: 1
-    path: Assets/Scenes/KarolLevel.unity
+    path: Assets/Scenes/ScenesNames/KarolLevel.unity
     guid: f19efaa505fd4124da65542572a8c8f5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3f3de8dca7460dc46b8e046e87995f74, type: 3}
