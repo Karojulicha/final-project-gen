@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ffaa0260786d3b4b8c522124a77219e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finisheLevel: 0
 --- !u!65 &106377087
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1267,6 +1268,10 @@ PrefabInstance:
     - target: {fileID: 6935326630557739038, guid: 962b0b2e8027d154c95f51278ef2a91f, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625781092257998828, guid: 962b0b2e8027d154c95f51278ef2a91f, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7641494908076615099, guid: 962b0b2e8027d154c95f51278ef2a91f, type: 3}
       propertyPath: m_Convex
