@@ -5,9 +5,13 @@ public class ManagementInteractableObject : MonoBehaviour
     public bool canInteract = false;
     public void Interact(ManagementCharacter managementCharacter)
     {
-        if (TryGetComponent<ICharacterAction>(out ICharacterAction characterAction))
+        ICharacterAction[] actions = GetComponents<ICharacterAction>();
+        if (actions.Length > 0)
         {
-            characterAction.Interact(managementCharacter);
+            foreach (var action in actions)
+            {
+                action.Interact(managementCharacter);
+            }
         }
     }
 

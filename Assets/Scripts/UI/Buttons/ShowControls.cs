@@ -14,6 +14,8 @@ public class ShowControls : MonoBehaviour
 
     private int currentDialogIndex = 0;
 
+    public ManagementCharacter managementCharacter;
+
     // Método para cerrar el panel de controles
     public void CloseControls()
     {
@@ -31,7 +33,7 @@ public class ShowControls : MonoBehaviour
 
     void Update()
     {
-        if (dialogPanel.activeSelf && Input.GetKeyDown(KeyCode.Space))
+        if (dialogPanel.activeSelf && managementCharacter.managementCharacterInputs.characterActionsInfo.nextLine.triggered)
         {
             ShowNextDialog();
         }
@@ -47,7 +49,8 @@ public class ShowControls : MonoBehaviour
         }
         else
         {
-            dialogPanel.SetActive(false); // Ocultar el panel de diálogos cuando se terminen
+            dialogPanel.SetActive(false);
+            managementCharacter.canPlay = true;
         }
     }
 }

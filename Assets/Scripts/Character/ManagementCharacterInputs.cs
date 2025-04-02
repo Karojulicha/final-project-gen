@@ -24,6 +24,7 @@ public class ManagementCharacterInputs : MonoBehaviour
     void InitInputs()
     {
         characterActionsInfo.movementInput = characterActions.CharacterInputs.Movement;
+        characterActionsInfo.nextLine = characterActions.CharacterInputs.NextLine;
         characterActionsInfo.movementInput.performed += OnMovementInput;
         characterActionsInfo.movementInput.canceled += OnMovementInput;
         characterActionsInfo.jump = characterActions.CharacterInputs.Jump;
@@ -55,5 +56,6 @@ public class ManagementCharacterInputs : MonoBehaviour
         public InputAction useObject = new InputAction();
         internal InputAction dropObject = new InputAction();
         internal InputAction pause = new InputAction();
+        public InputAction nextLine = new InputAction();
     }
 }

@@ -144,6 +144,15 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextLine"",
+                    ""type"": ""Button"",
+                    ""id"": ""38641faf-a34d-4186-b6d1-616c4fb84355"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -322,6 +331,28 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22e75f35-b0d4-427f-b6ce-0a2b09707fed"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextLine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8f42dc7-3121-4b73-b3c0-71caadd29546"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextLine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -336,6 +367,7 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
         m_CharacterInputs_UseObject = m_CharacterInputs.FindAction("UseObject", throwIfNotFound: true);
         m_CharacterInputs_DropObject = m_CharacterInputs.FindAction("DropObject", throwIfNotFound: true);
         m_CharacterInputs_Pause = m_CharacterInputs.FindAction("Pause", throwIfNotFound: true);
+        m_CharacterInputs_NextLine = m_CharacterInputs.FindAction("NextLine", throwIfNotFound: true);
     }
 
     ~@CharacterActions()
@@ -422,6 +454,7 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterInputs_UseObject;
     private readonly InputAction m_CharacterInputs_DropObject;
     private readonly InputAction m_CharacterInputs_Pause;
+    private readonly InputAction m_CharacterInputs_NextLine;
     /// <summary>
     /// Provides access to input actions defined in input action map "CharacterInputs".
     /// </summary>
@@ -457,6 +490,10 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "CharacterInputs/Pause".
         /// </summary>
         public InputAction @Pause => m_Wrapper.m_CharacterInputs_Pause;
+        /// <summary>
+        /// Provides access to the underlying input action "CharacterInputs/NextLine".
+        /// </summary>
+        public InputAction @NextLine => m_Wrapper.m_CharacterInputs_NextLine;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -501,6 +538,9 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @NextLine.started += instance.OnNextLine;
+            @NextLine.performed += instance.OnNextLine;
+            @NextLine.canceled += instance.OnNextLine;
         }
 
         /// <summary>
@@ -530,6 +570,9 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @NextLine.started -= instance.OnNextLine;
+            @NextLine.performed -= instance.OnNextLine;
+            @NextLine.canceled -= instance.OnNextLine;
         }
 
         /// <summary>
@@ -612,5 +655,12 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "NextLine" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNextLine(InputAction.CallbackContext context);
     }
 }
