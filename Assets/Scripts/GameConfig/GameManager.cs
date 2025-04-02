@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("OptionsScene", LoadSceneMode.Additive);
                 break;
             case TypeScene.GameOver:
+                SceneManager.LoadScene(TypeScene.GameOver.ToString(), LoadSceneMode.Additive);
+                break;
+            case TypeScene.RestartScene:
                 OpenCloseScene.SetBool("Out", true);
                 OpenCloseScene.Play("Out");
                 if (fadeOut != null)
@@ -52,7 +55,7 @@ public class GameManager : MonoBehaviour
                     StopCoroutine(fadeOut);
                 }
                 fadeOut = StartCoroutine(FadeOut());
-                StartCoroutine(ChangeScene(TypeScene.HomeScene));
+                StartCoroutine(ChangeScene(SceneManager.GetActiveScene().buildIndex));
                 break;
             default:
                 OpenCloseScene.SetBool("Out", true);
@@ -98,6 +101,25 @@ public class GameManager : MonoBehaviour
         if (typeScene != TypeScene.Exit)
         {
             SceneManager.LoadScene(typeScene.ToString());
+        }
+        else
+        {
+            Application.Quit();
+        }
+        OpenCloseScene.SetBool("Out", false);
+        if (fadeOut != null)
+        {
+            StopCoroutine(fadeOut);
+        }
+        StartCoroutine(FadeIn());
+    }
+    public IEnumerator ChangeScene(int index)
+    {
+        Time.timeScale = 1;
+        yield return new WaitForSecondsRealtime(2);
+        if (SceneManager.GetSceneAt(index).name != TypeScene.Exit.ToString())
+        {
+            SceneManager.LoadScene(index);
         }
         else
         {
@@ -216,7 +238,8 @@ public class GameManager : MonoBehaviour
         GameScene = 2,
         Exit = 3,
         GameOver = 4,
-        WinScene = 5
+        WinScene = 5,
+        RestartScene = 6,
     }
     public enum TypeDevice
     {
