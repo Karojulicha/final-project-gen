@@ -31,22 +31,12 @@ public class ManagementCharacterInputs : MonoBehaviour
         characterActionsInfo.interact = characterActions.CharacterInputs.Interact;
         characterActionsInfo.useObject = characterActions.CharacterInputs.UseObject;
         characterActionsInfo.dropObject = characterActions.CharacterInputs.DropObject;
-        characterActionsInfo.pause = characterActions.CharacterInputs.Pause;
-        characterActionsInfo.pause.performed += OnPauseInput;
+        characterActionsInfo.pause = characterActions.CharacterInputs.Pause;        
     }
     void OnMovementInput(InputAction.CallbackContext context)
     {
         characterActionsInfo.movement = context.ReadValue<Vector2>();
     }
-
-    void OnPauseInput(InputAction.CallbackContext context)
-    {
-        if (!SceneManager.GetSceneByName("OptionsScene").isLoaded)
-        {
-            GameManager.Instance.ChangeSceneSelector(GameManager.TypeScene.OptionsScene);
-        }
-    }
-
     [Serializable] public class CharacterActionsInfo
     {
         public Vector2 movement = new Vector2();

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ManagementCharacter : MonoBehaviour
 {
@@ -22,6 +23,14 @@ public class ManagementCharacter : MonoBehaviour
             HandleMove();            
             HandleActions();
             HandleCounter();
+            OnPauseInput();
+        }
+    }
+    void OnPauseInput()
+    {
+        if (!SceneManager.GetSceneByName("OptionsScene").isLoaded && managementCharacterInputs.characterActionsInfo.pause.triggered)
+        {
+            GameManager.Instance.ChangeSceneSelector(GameManager.TypeScene.OptionsScene);
         }
     }
     void ActiveCharacter()
