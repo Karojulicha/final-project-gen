@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 584588452}
   - component: {fileID: 584588454}
   - component: {fileID: 584588453}
+  - component: {fileID: 584588455}
   m_Layer: 5
   m_Name: RestartButtonText
   m_TagString: Untagged
@@ -249,7 +250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: Reiniciar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -328,6 +329,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584588451}
   m_CullTransparentMesh: 1
+--- !u!114 &584588455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584588451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d901b0140a38f4ab7d7cc4a2b33a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 28
+  currentLanguage: 0
 --- !u!1 &758804607
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,6 +429,7 @@ GameObject:
   - component: {fileID: 850464296}
   - component: {fileID: 850464298}
   - component: {fileID: 850464297}
+  - component: {fileID: 850464299}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -539,6 +555,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850464295}
   m_CullTransparentMesh: 1
+--- !u!114 &850464299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850464295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d901b0140a38f4ab7d7cc4a2b33a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 29
+  currentLanguage: 0
 --- !u!1 &1023663662
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +580,7 @@ GameObject:
   - component: {fileID: 1023663663}
   - component: {fileID: 1023663665}
   - component: {fileID: 1023663664}
+  - component: {fileID: 1023663666}
   m_Layer: 5
   m_Name: BackButtonText
   m_TagString: Untagged
@@ -596,7 +627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Home
+  m_text: Inicio
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -675,6 +706,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023663662}
   m_CullTransparentMesh: 1
+--- !u!114 &1023663666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023663662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d901b0140a38f4ab7d7cc4a2b33a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 12
+  currentLanguage: 0
 --- !u!1 &1099156864
 GameObject:
   m_ObjectHideFlags: 0
