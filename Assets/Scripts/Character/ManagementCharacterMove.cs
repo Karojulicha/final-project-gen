@@ -6,6 +6,7 @@ public class ManagementCharacterMove : MonoBehaviour
     public Transform model;
     public ManagementCharacter managementCharacter;
     Vector3 movementDirection = new Vector3();
+    public bool isMoving = false;
     public void Move()
     {
         am.SetBool("isJump", !managementCharacter.characterInfo.isGrounded);

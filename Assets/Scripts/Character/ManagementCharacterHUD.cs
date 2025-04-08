@@ -14,6 +14,10 @@ public class ManagementCharacterHUD : MonoBehaviour
         managementCharacter.managementCharacterCounter.CounterChanged += UpdateBar;
         GameManager.Instance.OnDeviceChanged += ChangeHUD;
     }
+    void OnDestroy()
+    {
+        GameManager.Instance.OnDeviceChanged -= ChangeHUD;
+    }
     void UpdateBar(float amount)
     {
         fillBar.fillAmount = amount / 1f;
