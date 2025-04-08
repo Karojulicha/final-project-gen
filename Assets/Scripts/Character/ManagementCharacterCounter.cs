@@ -10,6 +10,7 @@ public class ManagementCharacterCounter : MonoBehaviour
     public float _counter;
     public event Action<float> CounterChanged;
     public Rigidbody[] ragdols;
+    private Vector3 lastPosition;
     public float counter
     {
         get => _counter;
@@ -60,7 +61,7 @@ public class ManagementCharacterCounter : MonoBehaviour
     public void Counter()
     {
         if (managementCharacter.characterInfo.GetGroundHits().Count > 0 && managementCharacter.characterInfo.GetGroundHits().TryGetValue("SafeZone", out GameObject objectHited) ||
-            managementCharacter.characterInfo.rb.linearVelocity.x != 0 || managementCharacter.characterInfo.rb.linearVelocity.z != 0)
+            managementCharacter.characterInfo.rb.linearVelocity != Vector3.zero)
         {
             add = true;
         }
