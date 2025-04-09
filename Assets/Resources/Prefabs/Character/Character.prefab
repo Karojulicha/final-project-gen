@@ -162,7 +162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285297846203326350}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44721362, y: 0.00000007529355, z: -0.000000037646778, w: 0.8944272}
+  m_LocalRotation: {x: 0.44721365, y: 0.000000029053968, z: -0.000000014526986, w: 0.8944272}
   m_LocalPosition: {x: 0, y: 20, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -701,7 +701,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     nextLine:
-      m_Name: 
+      m_Name: Next Line
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: c607bd82-07aa-4a7d-a624-5665fcf1b3c9
@@ -817,7 +817,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managementCharacter: {fileID: 2838237150615445149}
   hudsInfo:
-    PC: []
+    PC:
+    - {fileID: 0}
     Mobile:
     - {fileID: 7931140139079028707}
   fillBar: {fileID: 5327978219334168460}
@@ -881,7 +882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.3137255, b: 0, a: 1}
+  m_Color: {r: 0.3019608, g: 0.27058825, b: 0.2509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1022,7 +1023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -32}
   m_SizeDelta: {x: 600, y: 60}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7342693681901010872
@@ -1053,8 +1054,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8eb69fafe4f719b49bb2dd1a7358aaaa, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 109ad098ce6d644d895fbe7d0f5cb0a8, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1205,7 +1206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.3137255, b: 0, a: 1}
+  m_Color: {r: 0.3019608, g: 0.27058825, b: 0.2509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1249,7 +1250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5040201686320237333}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44721362, y: 0.000000075293535, z: -0.00000003764676, w: 0.8944272}
+  m_LocalRotation: {x: 0.44721362, y: 0.000000029053965, z: -0.000000014526982, w: 0.89442724}
   m_LocalPosition: {x: 0, y: 20, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1407,7 +1408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.3137255, b: 0, a: 1}
+  m_Color: {r: 0.3019608, g: 0.27058825, b: 0.2509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1540,7 +1541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.3137255, b: 0, a: 1}
+  m_Color: {r: 0.3019608, g: 0.27058825, b: 0.2509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1627,7 +1628,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -61.1401, y: 0}
+  m_SizeDelta: {x: 0.00000667572, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &42807191824147642
 CanvasRenderer:
@@ -1658,7 +1659,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 83471c63e3e394a0dae08415d0acb83a, type: 3}
-  m_Type: 1
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
@@ -1905,7 +1906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.3137255, b: 0, a: 1}
+  m_Color: {r: 0.3019608, g: 0.27058825, b: 0.2509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2130,10 +2131,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.65882355}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.30588236}
+    m_DisabledColor: {r: 0.764151, g: 0.764151, b: 0.764151, a: 0.105882354}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
